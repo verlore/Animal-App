@@ -35,7 +35,7 @@ var randomTen = function(){
    return Math.floor(Math.random() * 10);
 } 
 
-//multi dimensional array with the second item being an empty array to reference if the cell is occupied or not
+
 var landArray_Generation = () => {
    for(var i = 0; i < 100; i++){
          landArray.push([i, ""])
@@ -134,7 +134,7 @@ btnGenerate.addEventListener("click", function(){
 
 
 
-   //methods to start.
+  //Generation of everything.
    world_Generation();
    landArray_Generation();
    boarderLines_Generation();
@@ -354,6 +354,8 @@ var thirst = (arr) => {
      
 }
 
+// function for eating
+
 var eatBush = (arr) => {
    
    if(arr.name == "deer"){
@@ -361,7 +363,7 @@ var eatBush = (arr) => {
          let randomDrain = randomTen();
          return arr.hunger -= randomDrain;
       }
-      if(arr.position === newBushPopulation[0].position){ //this was breaking the code and should be working now.
+      if(arr.position === newBushPopulation[0].position){ 
          newBushPopulation.shift();
          arr.hunger = 100;
          return arr.movingToPos = random();
@@ -374,7 +376,7 @@ var eatBush = (arr) => {
          return arr.movingToPos = newBushPopulation[0].position;
       }
       
-   }                                //MIGHT NEED TO CHANGE ARRAY METHOD!
+   }                                
    else if(arr.name == "lion"){
       if(arr.hunger <= 20 && newDeerPopulation.length === 0){
          lionPopulation.shift();
@@ -402,12 +404,6 @@ var eatBush = (arr) => {
 }
 
 
-
-
-
-//landArray;
-//newLandArray
-
 //-------------------------------------------------------------keep bushes and water there
 
 var bushAndWaterUpdate = (arr) => {
@@ -423,7 +419,7 @@ var bushAndWaterUpdate = (arr) => {
 var timeout; // clear timeout
 var Timer = 0;
 
-function gameTimer(){ //this function is called inline by the button.
+function gameTimer(){ 
     
     timeout = setTimeout(function(){ 
       Timer++; 
