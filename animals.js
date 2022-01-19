@@ -468,7 +468,7 @@ function gameTimer(){
       // console.log(`The lion is moving to: ${newLionPopulation[0].movingToPos}.`);
       console.log(`Timer: ${Timer}`);
       // console.log('##############################################################');
-      if(Timer < 240){gameTimer();} // make it run for more than 3+ mins. rn is one 1min.             
+      if(Timer < 240){gameTimer();}            
     }, 500) 
 }   
 
